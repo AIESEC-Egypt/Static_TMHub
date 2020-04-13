@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TM Hub</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description Here">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/jquery.steps.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body class=" ">
+        <a id="start"></a>
+        <div class="nav-container ">
+            <div class="bar bar--sm visible-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 col-md-2">
+                            <a href="home.html">
+                                <img class="logo logo-dark" alt="logo" src="img/logo-dark.png" />
+                                <img class="logo logo-light" alt="logo" src="img/logo-light.png" />
+                            </a>
+                        </div>
+                        <div class="col-9 col-md-10 text-right">
+                            <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs">
+                                <i class="icon icon--sm stack-interface stack-menu"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </div>
+            <!--end bar-->
+            <nav id="menu1" class="bar bar--sm bar-1 hidden-xs bar--absolute bar--transparent">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-2 hidden-xs">
+                            <div class="bar__module">
+                                <a href="home.html">
+                                    <img class="logo logo-dark" alt="logo" src="img/logo-dark.png" />
+                                    <img class="logo logo-light" alt="logo" src="img/logo-light.png" />
+                                </a>
+                            </div>
+                            <!--end module-->
+                        </div>
+                        <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
+                            <div class="bar__module">
+                                <ul class="menu-horizontal text-right">
+                                    
+                                    <li>
+                                        <a href="home.html">Home</a>
+                                        <!--end dropdown container-->
+                                    </li>
+                                    <li>
+                                        <a href="#courses">Courses</a>
+                                        <!--end dropdown container-->
+                                    </li>
+                                    <li>
+                                        <a href="mycourses.html">My Courses</a>
+                                        <!--end dropdown container-->
+                                    </li>
+                                    <li>
+                                        <a>Hello</a> <span id="user_name"></span> , <a href="#" onclick="logout();">Logout</a>
+                                    </li>
+                                
+                                </ul>
+                            </div>
+                            <!--end module-->
+                            
+                            <!--end module-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </nav>
+            <!--end bar-->
+        </div>
+        <div class="main-container">
+            <section class="height-100 imagebg" style="background-color: white;">
+                <div class="background-image-holder">
+                    <img alt="background" src="img/hub_bg2.png" />
+                </div>
+                <div class="container pos-vertical-center">
+                    <div class="row">
+                        <div class="col-md-4 text-left">
+                            
+                            <h1 style="color: white;">Welcome</h1>
+                            
+                            <p style="color: white;">This is the national educational platform of AIESEC in Egypt, where you can find courses provided by the national plenary and your beloved MC Athr in order to make sure you have the required knowledge and master all the skills to boost your performance in your department!</p>
+                            
+                            <a href="#courses" type="button" class="btn btn-lg btn-success" style="background-color: #ffc845; padding: 10px 60px; border-radius: 20px; color:black;">   Start Learning   </a>
+                        </div>
+                        <div class="col-md-4 text-center">     
+                            <img src="img/aiesecman.gif" style="width: 110px; height: 200px;"/>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 col-lg-12 text-center">
+                            <a id="courses"></a>
+                            <h2 style="color: #037ef3;"><strong>Latest Added Courses</strong></h2>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <div class="slider" data-arrows="true" data-paging="true">
+                                <ul class="slides">
+                                    <li class="col-md-4"><a id="course_link_1" href="#"><div class="feature feature-7 boxed text-center imagebg" data-overlay="3">
+                                                    <div id="course_cover_1" class="background-image-holder" style="background: url(&quot;img/cowork-1.jpg&quot;); opacity: 1;">
+                                                        <img id="course_img_1" alt="background" src="">
+                                                    </div>
+                                                    <h4 id="course_title_1" class="pos-vertical-center">title</h4>
+                                        </div></a></li>
+                                    
+                                    <li class="col-md-4"><a id="course_link_2" href="#"><div class="feature feature-7 boxed text-center imagebg" data-overlay="3">
+                                                    <div id="course_cover_2" class="background-image-holder" style="background: url(&quot;img/cowork-1.jpg&quot;); opacity: 1;">
+                                                        <img id="course_img_2" alt="background" src="">
+                                                    </div>
+                                                    <h4 id="course_title_2" class="pos-vertical-center">title</h4>
+                                        </div></a></li>
+                                    
+                                    <li class="col-md-4"><a id="course_link_3" href="#"><div class="feature feature-7 boxed text-center imagebg" data-overlay="3">
+                                                    <div id="course_cover_3" class="background-image-holder" style="background: url(&quot;img/cowork-1.jpg&quot;); opacity: 1;">
+                                                        <img id="course_img_3" alt="background" src="">
+                                                    </div>
+                                                    <h4 id="course_title_3" class="pos-vertical-center">title</h4>
+                                        </div></a></li>
+                                    
+                                    <li class="col-md-4"><a id="course_link_4" href="#"><div class="feature feature-7 boxed text-center imagebg" data-overlay="3">
+                                                    <div id="course_cover_4" class="background-image-holder" style="background: url(&quot;img/cowork-1.jpg&quot;); opacity: 1;">
+                                                        <img id="course_img_4" alt="background" src="">
+                                                    </div>
+                                                    <h4 id="course_title_4" class="pos-vertical-center">title</h4>
+                                        </div></a></li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!--end of row-->
+                </div>
+                <div class="container" style="margin-bottom: 0px; margin-top: 0px;">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 col-lg-12 text-center">
+                            <br />
+                            <h2 style="color: #037ef3;"><strong>What do you want to learn?</strong></h2>
+                            <br />
+                        </div>
+                    </div>
+                    <div id="categories_containter" class="row" style="margin-bottom: 0px; margin-top: 0px;">
+                                        
+                                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            
+            
+            
+            
+            
+            
+            <footer class="height-80 imagebg" style="background-color: white;">
+                <div class="background-image-holder">
+                    <img alt="background" src="img/footer.png" />
+                </div>
+                <div class="container pos-vertical-bottom">
+                    <div class="row">
+                        <div class="col-md-4 text-left">
+                            
+                        </div>
+                        
+                        <div class="col-md-8 text-right">
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <ul class="social-list list-inline list--hover">
+                                <li class="list-inline-item">
+                                    <a href="">
+                                        Developed By Dalegah, Omar A. , Karim A.
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/membercommitteegypt/">
+                                        <i class="socicon socicon-facebook icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.instagram.com/mcegyptt/">
+                                        <i class="socicon socicon-instagram icon icon--xs"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <br />
+                            <span class="type--fine-print">&copy;
+                                <span class="update-year"></span> AIESEC in Egypt</span>
+                           
+                            
+                            
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+            </footer>
+        </div>
+        <!--<div class="loader"></div>-->
+        <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+            <i class="stack-interface stack-up-open-big"></i>
+        </a>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/flickity.min.js"></script>
+        <script src="js/easypiechart.min.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="js/datepicker.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/ytplayer.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/granim.min.js"></script>
+        <script src="js/jquery.steps.min.js"></script>
+        <script src="js/countdown.min.js"></script>
+        <script src="js/twitterfetcher.min.js"></script>
+        <script src="js/spectragram.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script>
+            var endpoint = "https://edm.aiesec.org.eg"
+            
+            function listCookies() {
+            var theCookies = document.cookie.split(';');
+            var aString = '';
+            for (var i = 1 ; i <= theCookies.length; i++) {
+                aString += i + ' ' + theCookies[i-1] + "\n";
+            }
+            return aString;
+        }
+            function getCookie(cname) {
+              var name = cname + "=";
+              var decodedCookie = decodeURIComponent(document.cookie);
+              var ca = decodedCookie.split(';');
+              for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                  c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                  return c.substring(name.length, c.length);
+                }
+              }
+              return "";
+            }
+            function setCookie(cname, cvalue, exdays) {
+              var d = new Date();
+              d.setTime(d.getTime() + (exdays*24*60*60*1000));
+              var expires = "expires="+ d.toUTCString();
+              document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            
+            
+            function inject_categories(data){
+                var opps = data['data']['allCategories']['edges'];
+                opps.forEach(function(element) {
+                    var $log = $( "#categories_containter" ),
+                    str = '<div class="col-md-4 col-6"><a href="courses.html?category='+element['node'].id+'" class="block"><div class="feature feature-7 boxed text-center imagebg" data-overlay="3"><div class="background-image-holder" style="background: url(&quot;img/upload/'+ element['node'].poster+'&quot;); opacity: 1;"><img alt="background" src="img/blog-1.jpg"></div><h4 class="pos-vertical-center"></h4></div> </a></div>',
+                    html = $.parseHTML( str ),
+                    nodeNames = [];
+                    $log.append( html );
+                });
+            }
+            function load_categories(){
+                var query = `query Myquery {
+                  allCategories{
+                    edges
+                    {
+                      node
+                      {
+                        id
+                        title
+                        poster
+                      }
+                    }
+                  }
+                }`;
+              
+
+                data_ = fetch(endpoint+'/graphql', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    query,
+                  })
+                })
+                  .then(r => r.json())
+                  .then(data => inject_categories(data));
+            }
+            function inject_latest_courses(data){
+                var opps = data['data']['allCourses']['edges'];
+                var counter = 1;
+                opps.forEach(function(element) {
+                    document.getElementById('course_link_'+counter.toString()).setAttribute('href', "/courseinfo.html?id="+element.node.id);
+                    document.getElementById('course_title_'+counter.toString()).innerHTML = element.node.title;
+                    document.getElementById('course_img_'+counter.toString()).setAttribute('src','img/upload/'+element.node.poster);
+                    document.getElementById('course_cover_'+counter.toString()).setAttribute('style', 'background: url(img/upload/'+element.node.poster+'); opacity: 1;')
+                    counter = counter + 1;
+                });
+            }
+            function load_latest_courses(){
+                var query = `query Myquery {
+                  allCourses(last:4){
+                    edges{
+                      node{
+                        id
+                        title
+                        poster
+                      }
+                    }
+                  }
+                }`;
+
+
+                data_ = fetch(endpoint+'/graphql', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    query,
+                  })
+                })
+                  .then(r => r.json())
+                  .then(data => inject_latest_courses(data));
+            }
+            
+            
+            function show_user_data(data){
+                document.getElementById('user_name').innerHTML = data['data']['CurrentUser']['profile']['firstName'];
+
+            }
+            function get_current_user(access_token){
+                var query = `query Myquery {
+                     CurrentUser
+                      {
+                        id
+                        profile
+                        {
+                          firstName
+                        }
+                      }
+                    }`;
+
+                    data_ = fetch(endpoint + '/graphql', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': 'JWT ' + access_token,
+                      },
+                      body: JSON.stringify({
+                        query,
+                      })
+                    })
+                      .then(r => r.json())
+                      .then(data => show_user_data(data));
+            }
+            function logout(){
+                document.cookie = "edm_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                window.location.href = '/index.html';
+            }
+            
+            function main(){
+               load_categories();
+               load_latest_courses();
+                var current_token = getCookie('edm_token');
+                if (current_token == "")
+                {
+                    window.location.href = '/index.html';
+                }
+                else
+                {
+                    get_current_user(current_token)
+                }
+            }
+            
+            window.onload = main;
+        
+        </script>
+    </body>
+</html>

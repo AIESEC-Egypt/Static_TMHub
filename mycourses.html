@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TM Hub</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description Here">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/jquery.steps.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body class=" ">
+        <a id="start"></a>
+        <div class="nav-container ">
+            <div class="bar bar--sm visible-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 col-md-2">
+                            <a href="index.html">
+                                <img class="logo logo-dark" alt="logo" src="img/logo-dark.png" />
+                                <img class="logo logo-light" alt="logo" src="img/logo-light.png" />
+                            </a>
+                        </div>
+                        <div class="col-9 col-md-10 text-right">
+                            <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs">
+                                <i class="icon icon--sm stack-interface stack-menu"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </div>
+            <!--end bar-->
+            <nav id="menu1" class="bar bar--sm bar-1 hidden-xs bar--absolute bar--transparent">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-2 hidden-xs">
+                            <div class="bar__module">
+                                <a href="index.html">
+                                    <img class="logo logo-dark" alt="logo" src="img/logo-dark.png" />
+                                    <img class="logo logo-light" alt="logo" src="img/logo-light.png" />
+                                </a>
+                            </div>
+                            <!--end module-->
+                        </div>
+                        <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
+                            <div class="bar__module">
+                                <ul class="menu-horizontal text-right">
+                                    
+                                    <li>
+                                        <a href="home.html">Home</a>
+                                        <!--end dropdown container-->
+                                    </li>
+                                    <li>
+                                        <a href="home.html#course">Courses</a>
+                                        <!--end dropdown container-->
+                                    </li>
+                                    <li>
+                                        <a href="mycourses.html">My Courses</a>
+                                        <!--end dropdown container-->
+                                    </li>
+                                    <li>
+                                        <a>Hello</a> <span id="user_name"></span> , <a href="#" onclick="logout();">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--end module-->
+                            
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </nav>
+            <!--end bar-->
+        </div>
+        <div class="main-container">
+            <section class="height-100 imagebg" style="background-color: white;">
+                <div class="background-image-holder">
+                    <img alt="background" src="img/hub_bg2.png" />
+                </div>
+                <div class="container pos-vertical-center">
+                    <div class="row">
+                        <div class="col-md-4 text-left">
+                            
+                            <h2 style="color: white;">Continue Learning!</h2>
+                            
+                            <p style="color: white;">Check out the courses below that you joined and make sure to complete them! </p>
+                            
+                            <a href="#courses" type="button" class="btn btn-lg btn-success" style="background-color: #ffc845; padding: 10px 60px; border-radius: 20px; color:black;">   Check The Courses!   </a>
+                        </div>
+                        <div class="col-md-4 text-center">     
+                            <img src="img/aiesecman.gif" style="width: 110px; height: 200px;"/>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+            <section>
+                
+                <div class="container">
+                    <a id="courses"></a>
+                    <h2 style="color: #037ef3; text-align: center;"><strong >My Courses</strong></h2>
+                    
+                        <div id="courses_container" class="masonry__container row">
+                            
+                            
+                            
+                        </div>
+                        
+                        <!--end of masonry__container + row-->
+                    
+                    <!--end of masonry-->
+                </div>
+                <!--end of container-->
+            </section>
+      
+            
+            
+            
+            
+            
+        </div>
+        <footer class="height-80 imagebg" style="background-color: white;">
+                <div class="background-image-holder">
+                    <img alt="background" src="img/footer.png" />
+                </div>
+                <div class="container pos-vertical-bottom">
+                    <div class="row">
+                        <div class="col-md-4 text-left">
+                            
+                        </div>
+                        
+                        <div class="col-md-8 text-right">
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <ul class="social-list list-inline list--hover">
+                                <li class="list-inline-item">
+                                    <a href="">
+                                        Developed By Dalegah, Omar A. , Karim A.
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.facebook.com/membercommitteegypt/">
+                                        <i class="socicon socicon-facebook icon icon--xs"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="https://www.instagram.com/mcegyptt/">
+                                        <i class="socicon socicon-instagram icon icon--xs"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <br />
+                            <span class="type--fine-print">&copy;
+                                <span class="update-year"></span> AIESEC in Egypt</span>
+                           
+                            
+                            
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+            </footer>
+        <!--<div class="loader"></div>-->
+        <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+            <i class="stack-interface stack-up-open-big"></i>
+        </a>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/flickity.min.js"></script>
+        <script src="js/easypiechart.min.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="js/datepicker.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/ytplayer.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/granim.min.js"></script>
+        <script src="js/jquery.steps.min.js"></script>
+        <script src="js/countdown.min.js"></script>
+        <script src="js/twitterfetcher.min.js"></script>
+        <script src="js/spectragram.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script>
+            var endpoint = "https://edm.aiesec.org.eg"
+            function getUrlVars() {
+                    var vars = {};
+                    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                        vars[key] = value;
+                    });
+                    return vars;
+                }
+            function listCookies() {
+            var theCookies = document.cookie.split(';');
+            var aString = '';
+            for (var i = 1 ; i <= theCookies.length; i++) {
+                aString += i + ' ' + theCookies[i-1] + "\n";
+            }
+            return aString;
+        }
+            function getCookie(cname) {
+              var name = cname + "=";
+              var decodedCookie = decodeURIComponent(document.cookie);
+              var ca = decodedCookie.split(';');
+              for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                  c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                  return c.substring(name.length, c.length);
+                }
+              }
+              return "";
+            }
+            function setCookie(cname, cvalue, exdays) {
+              var d = new Date();
+              d.setTime(d.getTime() + (exdays*24*60*60*1000));
+              var expires = "expires="+ d.toUTCString();
+              document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            
+            function getUrlParam(parameter, defaultvalue){
+                    var urlparameter = defaultvalue;
+                    if(window.location.href.indexOf(parameter) > -1){
+                        urlparameter = getUrlVars()[parameter];
+                        }
+                    return urlparameter;
+                }
+            function inject_my_courses(data){
+                console.log(data);
+                var courses = data['data']['allEnrollments']['edges'];
+                courses.forEach(function(element) {
+                    //document.getElementById('cat_title').innerHTML = element['node']['category']['edges'][0]['node'].title;
+                    //document.getElementById('cat_name').innerHTML = element['node']['category']['edges'][0]['node'].title;
+                    var $log = $( "#courses_container" ),
+                    str = '<div class="col-md-4 masonry__item"><div class="card card-2 text-center"><div class="card__top"><a href="/courseinfo.html?id='+element.node.course.id+'"><img alt="Image" src="img/upload/course_poster.jpg"></a></div><div class="card__body"><h4>'+element.node.course.title+'</h4><span class="type--fade">'+element.node.course.category.edges[0].node.title+'</span><p>'+element.node.course.description+'</p><div class="progress-horizontal progress-horizontal--lg text-center"><div class="progress-horizontal__bar" data-value="40"><div class="progress-horizontal__progress" style="width: '+element.node.totalProgress+'%;"></div></div><span class="progress-horizontal__label h5">Progress: '+element.node.totalProgress+'%</span></div></div></div></div>',
+                    html = $.parseHTML( str ),
+                    nodeNames = [];
+                    $log.append( html );
+                });
+            }
+            function load_my_courses(){
+                var query = `query Myquery {
+                      allEnrollments{
+                        edges{
+                          node{
+                            course{
+                              id
+                              title
+                              category{edges{node{title}}}
+                              poster
+                              description
+                            }
+                            totalProgress
+                          }
+                        }
+                      }
+                }`;
+                //var variables = { id: category_id },
+
+                data_ = fetch(endpoint+'/graphql', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    query,
+                    //variables,
+                  })
+                })
+                  .then(r => r.json())
+                  .then(data => inject_my_courses(data));
+            }
+            
+            function show_user_data(data){
+                document.getElementById('user_name').innerHTML = data['data']['CurrentUser']['profile']['firstName'];
+
+            }
+            function get_current_user(access_token){
+                var query = `query Myquery {
+                     CurrentUser
+                      {
+                        id
+                        profile
+                        {
+                          firstName
+                        }
+                      }
+                    }`;
+
+                    data_ = fetch(endpoint + '/graphql', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': 'JWT ' + access_token,
+                      },
+                      body: JSON.stringify({
+                        query,
+                      })
+                    })
+                      .then(r => r.json())
+                      .then(data => show_user_data(data));
+            }
+            function logout(){
+                document.cookie = "edm_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                window.location.href = '/index.html';
+            }
+            function main(){
+               var current_token = getCookie('edm_token');
+                if (current_token == "")
+                {
+                    window.location.href = '/index.html';
+                }
+                else
+                {
+                    get_current_user(current_token)
+                }
+               load_my_courses();
+                
+            }
+            
+            window.onload = main;
+        
+        </script>
+    </body>
+</html>

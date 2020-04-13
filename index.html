@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TM Hub - AIESEC in Egypt</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description Here">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/flickity.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/jquery.steps.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body class=" ">
+        <a id="start"></a>
+        <div class="nav-container ">
+            <nav class="bar bar-4 bar--transparent bar--absolute" data-fixed-at="200">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1 col-md-2 col-md-offset-0 col-4">
+                            <div class="bar__module">
+                                <a href="index.html">
+                                    <img class="logo logo-dark" alt="logo" src="img/logo-dark.png" />
+                                    <img class="logo logo-light" alt="logo" src="img/logo-light.png" />
+                                </a>
+                            </div>
+                            <!--end module-->
+                        </div>
+                        
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </nav>
+            <!--end bar-->
+        </div>
+        <div class="main-container">
+            <section class="imageblock switchable feature-large height-100">
+                <div class="imageblock__content col-lg-6 col-md-4 pos-right">
+                    <div class="background-image-holder">
+                        <img alt="image" src="img/upload/er.jpg" />
+                    </div>
+                </div>
+                <div class="container pos-vertical-center">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-7">
+                            <h1>Welcome</h1>
+                            <span class="h2 countdown color--primary" data-date="09/25/2018" data-fallback-text="Getting ready"></span>
+                            <p class="lead">To AIESEC in Egypt educational platform, please Sign in with your EXPA Account for access.</p>
+                            
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span id="btn_sign_in"><button type="submit" onclick="sign_in_btn();" class="btn btn--primary type--uppercase">Sign In</button></span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="type--fine-print">This is currently available for AIESEC in Egypt active membership only.
+                                            
+                                        </span>
+                                    </div>
+                                    <div class="col-12">
+                                        <span id="login_error_msg" style="color: red;"></span>
+                                    </div>
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                        <input type="text" name="b_77142ece814d3cff52058a51f_f300c9cce8" tabindex="-1" value="">
+                                    </div>
+                                </div>
+                                <!--end row-->
+                            
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+        </div>
+        <!--<div class="loader"></div>-->
+        <a class="back-to-top inner-link" href="#start" data-scroll-class="100vh:active">
+            <i class="stack-interface stack-up-open-big"></i>
+        </a>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/flickity.min.js"></script>
+        <script src="js/easypiechart.min.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="js/datepicker.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/ytplayer.min.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/granim.min.js"></script>
+        <script src="js/jquery.steps.min.js"></script>
+        <script src="js/countdown.min.js"></script>
+        <script src="js/twitterfetcher.min.js"></script>
+        <script src="js/spectragram.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script>
+            var endpoint = "https://edm.aiesec.org.eg"
+            function listCookies() {
+            var theCookies = document.cookie.split(';');
+            var aString = '';
+            for (var i = 1 ; i <= theCookies.length; i++) {
+                aString += i + ' ' + theCookies[i-1] + "\n";
+            }
+            return aString;
+        }
+            function getCookie(cname) {
+              var name = cname + "=";
+              var decodedCookie = decodeURIComponent(document.cookie);
+              var ca = decodedCookie.split(';');
+              for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                  c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                  return c.substring(name.length, c.length);
+                }
+              }
+              return "";
+            }
+            function setCookie(cname, cvalue, exdays) {
+              var d = new Date();
+              d.setTime(d.getTime() + (exdays*24*60*60*1000));
+              var expires = "expires="+ d.toUTCString();
+              document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            function validate_login(data){
+                console.log(data);
+                if (data['data']['expaLogin'] != null)
+                {
+                    setCookie("edm_token", data['data']['expaLogin']['token'], 1);
+                    window.location.href = '/home.html';
+                }
+                else
+                {
+                    document.getElementById('login_error_msg').innerHTML = "Failed to Authenticate You please contact the admin!"
+                }
+            }
+            function auth_user(user_code){
+                console.log(user_code);
+                var query = `mutation Mymutation($codeToken: String!) {
+
+                      expaLogin(codeToken:$codeToken, type:"tmhub")
+                      {
+                        token
+                      }
+                    }`;
+
+                    var variables = { codeToken: user_code.toString() },
+
+                    data_ = fetch(endpoint + '/graphql', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        query,
+                        variables,
+                      })
+                    })
+                      .then(r => r.json())
+                      .then(data => validate_login(data));
+            }
+            function check_auth() {
+              //console.log(windowObjectReference.location.href);
+              if (windowObjectReference.location.href.indexOf("code=") > -1){
+                  console.log(windowObjectReference.location.href)
+                  var auth_code = windowObjectReference.location.href.split("?code=")[1]
+                  windowObjectReference.close();
+                  auth_user(auth_code);
+              }
+              if(windowObjectReference.closed){
+                  clearInterval(sensor);
+              }
+            }
+            var windowObjectReference = null;
+            var sensor = null;
+            function sign_in_btn(){
+                windowObjectReference = window.open(
+                "https://auth.aiesec.org/oauth/authorize?response_type=code&client_id=6cef6b871727a30fe4c210e8129840d4c142bd7837848af718bd41965f918bae&redirect_uri=https%3A%2F%2Ftmhub.aiesec.org.eg%2Fauth.html", "Authorization","resizable,scrollbars,status"
+              );
+              sensor = setInterval(check_auth, 1000); 
+            }
+            
+            function main(){
+                var current_token = getCookie('edm_token');
+                if (current_token != "")
+                {
+                   window.location.href = "/home.html";
+                  
+                }
+                else
+                {
+                    //get_current_user(current_token)
+                }
+            }
+            
+            window.onload = main;
+        </script>
+    </body>
+</html>
