@@ -271,8 +271,8 @@
             function inject_category_courses(data){
                 var courses = data['data']['allCourses']['edges'];
                 courses.forEach(function(element) {
-                    document.getElementById('cat_title').innerHTML = element['node']['category']['edges'][0]['node'].title;
-                    document.getElementById('cat_name').innerHTML = element['node']['category']['edges'][0]['node'].title;
+                    // document.getElementById('cat_title').innerHTML = element['node']['category']['edges'][0]['node'].title;
+                    // document.getElementById('cat_name').innerHTML = element['node']['category']['edges'][0]['node'].title;
                     var $log = $( "#categories_containter" ),
                     str = '<div class="col-md-4 col-6"><a href="courseinfo.html?id='+element['node'].id+'" class="block"><div class="feature feature-7 boxed text-center imagebg" data-overlay="3"><div class="background-image-holder" style="background: url(&quot;img/upload/'+ element['node'].poster+'&quot;); opacity: 1;"><img alt="background" src="img/blog-1.jpg"></div><h4 class="pos-vertical-center">'+ element['node'].title+'</h4></div> </a></div>',
                     html = $.parseHTML( str ),
@@ -280,6 +280,48 @@
                     $log.append( html );
                 });
             }
+            function inject_categories(data){
+                var cat = data['data']['getCategory']['title'];
+                document.getElementById('cat_title').innerHTML = cat;
+                document.getElementById('cat_name').innerHTML = cat;
+                console.log
+                // cat.forEach(function(element) {
+                    
+                //     // var $log = $( "#categories_containter" ),
+                //     // str = '<div class="col-md-4 col-6"><a href="courses.html?category='+element['node'].id+'" class="block"><div class="feature feature-7 boxed text-center imagebg" data-overlay="3"><div class="background-image-holder" style="background: url(&quot;img/upload/'+ element['node'].poster+'&quot;); opacity: 1;"><img alt="background" src="img/blog-1.jpg"></div><h4 class="pos-vertical-center"></h4></div> </a></div>',
+                //     // html = $.parseHTML( str ),
+                //     // nodeNames = [];
+                //     // $log.append( html );
+                // });
+            }
+            function load_categories(category_id){
+                var query = `query Myquery($id: ID!) {
+                    getCategory(id:$id)
+                    {
+                      title
+                     poster
+    
+    
+                         }
+                }`;
+              
+                var variables = { id: category_id },
+
+                data_ = fetch(endpoint+'/graphql', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    query,
+                    variables,
+                  })
+                })
+                  .then(r => r.json())
+                  .then(data => inject_categories(data));
+            }
+
             function load_category_courses(category_id){
                 var query = `query Myquery($id: [ID!]) {
                   allCourses(category:$id){
@@ -358,6 +400,7 @@
                     get_current_user(current_token)
                 }
                load_category_courses(category_id);
+               load_categories(category_id);
                 
             }
             

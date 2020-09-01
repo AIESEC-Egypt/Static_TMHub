@@ -317,24 +317,45 @@
                 document.getElementById('course_creation').innerHTML = data['data']['getCourse']['createdAt'].split('T')[0];
                 document.getElementById('course_poster').setAttribute('src', 'img/upload/'+data['data']['getCourse']['poster']);
                 document.getElementById('course_cover').setAttribute('style', 'background: url(img/upload/'+ data['data']['getCourse']['poster']+'); opacity: 1;');
-                
                 var materials = data['data']['getCourse']['material']['edges'];
-                    materials.forEach(function(element) {
-                        if(element['node']['videoContent'] != null){
+                var sortable = [];
+                var index = 0
+            for (var material = data['data']['getCourse']['material']['edges'][index]['node'] in materials) {
+
+                
+                    ind = data['data']['getCourse']['material']['edges'][index]['node']['index']
+                    if(data['data']['getCourse']['material']['edges'][index]['node']['index'] == index){
+                    sortable.push(data['data']['getCourse']['material']['edges'][index]['node']);
+                    }
+                    else{
+                    sortable[ind] = data['data']['getCourse']['material']['edges'][index]['node']
+                    }
+                     index++
+
+            }
+              
+                        
+
+                    sortable.forEach(function(element) {
+                 
+                        console.log(element);
+                        if(element.videoContent != null ){ 
                             var $log = $( "#mats_container" ),
-                            str = '<div class="boxed boxed--border  bg--secondary boxed--sm box-shadow"><table><tr><td width="10&"><i class="icon--sm icon-Video"></i></td><td width="60%">'+ element['node']['videoContent']['title']+'</td><td width="20%">'+ element['node']['duration']+' mins</td><td width="10%"></td></tr></table></div>',
+                            str = '<div class="boxed boxed--border  bg--secondary boxed--sm box-shadow"><table><tr><td width="10&"><i class="icon--sm icon-Video"></i></td><td width="60%">'+ element.videoContent.title+'</td><td width="20%">'+ element.duration+' mins</td><td width="10%"></td></tr></table></div>',
                             html = $.parseHTML( str ),
                             nodeNames = [];
                             $log.append( html );
+                            
                         }
-                        else if(element['node']['documentContent'] != null){
+                        else if(element.documentContent != null ){
                             var $log = $( "#mats_container" ),
-                            str = '<div class="boxed boxed--border  bg--secondary boxed--sm box-shadow"><table><tr><td width="10&"><i class="icon--sm icon-File"></i></td><td width="60%">'+ element['node']['documentContent']['title']+'</td><td width="20%">'+ element['node']['duration']+' mins</td><td width="10%"></td></tr></table></div>',
+                            str = '<div class="boxed boxed--border  bg--secondary boxed--sm box-shadow"><table><tr><td width="10&"><i class="icon--sm icon-File"></i></td><td width="60%">'+ element.documentContent.title+'</td><td width="20%">'+ element.duration+' mins</td><td width="10%"></td></tr></table></div>',
                             html = $.parseHTML( str ),
                             nodeNames = [];
                             $log.append( html );
+                            
                         }
-                    });
+                     });
             }
             
             
@@ -343,6 +364,7 @@
                   getCourse(id:$id){
                     id
                     title
+                    description
                     category{edges{node{id title}}}
                     createdAt
                     poster
@@ -350,6 +372,7 @@
                           edges{
                             node{
                               id
+                              index
                               videoContent{
                                 id
                                 title
@@ -535,11 +558,31 @@
                     document.getElementById('course_radial_progress').setAttribute('data-value', data['data']['MyEnrollment']['totalProgress'].toString())
                     document.getElementById('course_radial_progress').style.display = "block"  */                                                                                        
                     var materials = data['data']['MyEnrollment']['courseProgress']['edges'];
-                    materials.forEach(function(element) {
-                        if(element['node']['material']['videoContent'] != null){
-                            var file_id = element['node']['material']['videoContent']['youtubeId'].split('/')[5];
-                            var file_title = element['node']['material']['videoContent']['title'];
-                            var file_complete = element['node']['isDone'];
+
+                var ProgressSortable = [];   
+                var indexP = 0
+            for (var materialP = data['data']['MyEnrollment']['courseProgress']['edges'][indexP]['node'] in materials) {
+                console.log(data['data']['MyEnrollment']['courseProgress']['edges'][indexP]['node']);
+                    indP = data['data']['MyEnrollment']['courseProgress']['edges'][indexP]['node']['material']['index']
+                    if(data['data']['MyEnrollment']['courseProgress']['edges'][indexP]['node']['material']['index'] == indexP){
+                        ProgressSortable.push(data['data']['MyEnrollment']['courseProgress']['edges'][indexP]['node']);
+                    }
+                    else{
+                        ProgressSortable[indP] = data['data']['MyEnrollment']['courseProgress']['edges'][indexP]['node']
+                    }
+                     indexP++
+                     console.log(ProgressSortable);
+
+            }
+                       ProgressSortable.forEach(function(element) {
+                           console.log(element);
+                        if(element.material.videoContent != null){
+                            var file_id = element.material.videoContent.youtubeId.split('/')[5];
+                            var file_title = element.material.videoContent.title;
+                            console.log(file_title);
+
+                            var file_complete = element.isDone;
+                            console.log(file_complete);
                             var file_status = "Not Completed";
                             if (file_complete){
                                 file_status = "Completed"
@@ -548,15 +591,15 @@
                                 file_status = "Not Completed"
                             }
                             var $log = $( "#mats_container" ),
-                            str = '<div class="boxed boxed--border  bg--secondary boxed--sm box-shadow"><table><tr><td width="10&"><i class="icon--sm icon-Video"></i></td><td width="60%"><a href="javascript:void(0);" onclick="load_mats(' + "'" +element['node']['id']+ "'" + ',' + "'" + "video" + "'" +  ', ' + "'" +file_id + "'"+  ', ' + "'" +file_title + "'" +', '+file_complete+');">'+ element['node']['material']['videoContent']['title']+'</a></td><td width="20%">'+ element['node']['material']['duration']+' mins</td><td width="10%">'+file_status+'</td></tr></table></div>',
+                            str = '<div class="boxed boxed--border  bg--secondary boxed--sm box-shadow"><table><tr><td width="10&"><i class="icon--sm icon-Video"></i></td><td width="60%"><a href="javascript:void(0);" onclick="load_mats(' + "'" +element.id+ "'" + ',' + "'" + "video" + "'" +  ', ' + "'" +file_id + "'"+  ', ' + "'" +file_title + "'" +', '+file_complete+');">'+ element.material.videoContent.title+'</a></td><td width="20%">'+ element.material.duration+' mins</td><td width="10%">'+file_status+'</td></tr></table></div>',
                             html = $.parseHTML( str ),
                             nodeNames = [];
                             $log.append( html );
                         }
-                        else if(element['node']['material']['documentContent'] != null){
-                            var file_id = element['node']['material']['documentContent']['url'].split('/')[5];
-                            var file_title = element['node']['material']['documentContent']['title'];
-                            var file_complete = element['node']['isDone'];
+                        else if(element.material.documentContent != null){
+                            var file_id = element.material.documentContent.url.split('/')[5];
+                            var file_title = element.material.documentContent.title;
+                            var file_complete = element.isDone;
                             var file_status = "Not Completed";
                             if (file_complete){
                                 file_status = "Completed"
@@ -565,7 +608,7 @@
                                 file_status = "Not Completed"
                             }
                             var $log = $( "#mats_container" ),
-                            str = '<div class="boxed boxed--border  bg--secondary boxed--sm box-shadow"><table><tr><td width="10&"><i class="icon--sm icon-File"></i></td><td width="60%"><a href="javascript:void(0);" onclick="load_mats(' + "'" +element['node']['id']+ "'" + ',' + "'" + "file" + "'" +  ', ' + "'" +file_id + "'"+  ', ' + "'" +file_title + "'" +', '+file_complete+');">'+ element['node']['material']['documentContent']['title']+'</a></td><td width="20%">'+ element['node']['material']['duration']+' mins</td><td width="10%">'+file_status+'</td></tr></table></div>',
+                            str = '<div class="boxed boxed--border  bg--secondary boxed--sm box-shadow"><table><tr><td width="10&"><i class="icon--sm icon-File"></i></td><td width="60%"><a href="javascript:void(0);" onclick="load_mats(' + "'" +element.id+ "'" + ',' + "'" + "file" + "'" +  ', ' + "'" +file_id + "'"+  ', ' + "'" +file_title + "'" +', '+file_complete+');">'+ element.material.documentContent.title+'</a></td><td width="20%">'+ element.material.duration+' mins</td><td width="10%">'+file_status+'</td></tr></table></div>',
                             html = $.parseHTML( str ),
                             nodeNames = [];
                             $log.append( html );
@@ -588,6 +631,7 @@
                           node{
                             id
                             material{
+                                index
                               videoContent{
                                 id
                                 title

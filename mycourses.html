@@ -12,7 +12,7 @@
 </script>
 
         <meta charset="utf-8">
-        <title>TM Hub</title>
+        <title>PRIME</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Site Description Here">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
@@ -275,7 +275,7 @@
                     //document.getElementById('cat_title').innerHTML = element['node']['category']['edges'][0]['node'].title;
                     //document.getElementById('cat_name').innerHTML = element['node']['category']['edges'][0]['node'].title;
                     var $log = $( "#courses_container" ),
-                    str = '<div class="col-md-4 masonry__item"><div class="card card-2 text-center"><div class="card__top"><a href="/courseinfo.html?id='+element.node.course.id+'"><img alt="Image" src="img/upload/course_poster.jpg"></a></div><div class="card__body"><h4>'+element.node.course.title+'</h4><span class="type--fade">'+element.node.course.category.edges[0].node.title+'</span><p>'+element.node.course.description+'</p><div class="progress-horizontal progress-horizontal--lg text-center"><div class="progress-horizontal__bar" data-value="40"><div class="progress-horizontal__progress" style="width: '+element.node.totalProgress+'%;"></div></div><span class="progress-horizontal__label h5">Progress: '+element.node.totalProgress+'%</span></div></div></div></div>',
+                    str = '<div class="col-md-4 masonry__item"><div class="card card-2 text-center"><div class="card__top"><a href="/courseinfo.html?id='+element.node.course.id+'"><img alt="Image" src="img/upload/'+element.node.course.poster+'"></a></div><div class="card__body"><h4>'+element.node.course.title+'</h4><span class="type--fade">'+element.node.course.category.edges[0].node.title+'</span><p>'+element.node.course.description+'</p><div class="progress-horizontal progress-horizontal--lg text-center"><div class="progress-horizontal__bar" data-value="40"><div class="progress-horizontal__progress" style="width: '+element.node.totalProgress+'%;"></div></div><span class="progress-horizontal__label h5">Progress: '+element.node.totalProgress+'%</span></div></div></div></div>',
                     html = $.parseHTML( str ),
                     nodeNames = [];
                     $log.append( html );
