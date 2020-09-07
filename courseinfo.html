@@ -309,7 +309,7 @@
               document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
             }    
             
-            function show_course(data){
+              function show_course(data){
                 document.getElementById('course_category').innerHTML = data['data']['getCourse']['category']['edges'][0]['node']['title'];
                 document.getElementById('course_title').innerHTML = data['data']['getCourse']['title'];
                 document.getElementById('course_header_title').innerHTML = data['data']['getCourse']['title'];
