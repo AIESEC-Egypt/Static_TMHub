@@ -281,9 +281,77 @@
                     $log.append( html );
                 });
             }
-            function load_my_courses(){
+            // function get_enroll(access_token){
+            //     var query = `query Myquery {
+            //          CurrentUser
+            //           {
+            //             id
+            //             profile
+            //             {
+            //               firstName
+            //             }
+            //           }
+            //         }`;
+
+            //         data_ = fetch(endpoint + '/graphql', {
+            //           method: 'POST',
+            //           headers: {
+            //             'Content-Type': 'application/json',
+            //             'Accept': 'application/json',
+            //             '   Authorization': 'JWT ' + access_token,
+            //           },
+            //           body: JSON.stringify({
+            //             query,
+            //           })
+            //         })
+            //           .then(r => r.json())
+            //           .then(data => load_my_courses(data));    
+            //           console.log(data);
+            // }
+
+            function get_enroll(access_token){
                 var query = `query Myquery {
-                      allEnrollments{
+                     CurrentUser
+                      {
+                        id
+                        profile
+                        {
+                          firstName
+                        }
+                      }
+                    }`;
+
+                    data_ = fetch(endpoint + '/graphql', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': 'JWT ' + access_token,
+                      },
+                      body: JSON.stringify({
+                        query,
+                      })
+                    })
+                      .then(r => r.json())
+                      .then(data => load_my_courses(data));
+            }
+            function load_my_courses(data){
+
+                var id_stu = data['data']['CurrentUser']['id'];
+
+                var b64 = btoa("UserNode:"+id_stu);
+                console.log(b64);
+
+                // var id_stu = "VXNlck5vZGU6Ng==";
+// VXNlck5vZGU6Ng==
+
+
+
+                // id_stu = student_id.data.currentUser.id;
+
+
+                var query = `query Myquery($id: ID!) {
+                      allEnrollments(student:$id){
                         edges{
                           node{
                             course{
@@ -298,7 +366,7 @@
                         }
                       }
                 }`;
-                //var variables = { id: category_id },
+                var variables = { id: b64 },
 
                 data_ = fetch(endpoint+'/graphql', {
                   method: 'POST',
@@ -308,7 +376,7 @@
                   },
                   body: JSON.stringify({
                     query,
-                    //variables,
+                    variables,
                   })
                 })
                   .then(r => r.json())
@@ -358,6 +426,8 @@
                 else
                 {
                     get_current_user(current_token)
+                    get_enroll(current_token)
+
                 }
                load_my_courses();
                 
